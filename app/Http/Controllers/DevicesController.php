@@ -60,7 +60,7 @@ class DevicesController extends Controller
      */
     public function show(Device $device, DistanceService $distanceService)
     {
-        $distance = $distanceService->getDistance();
+        $distance = $distanceService->getDistancePhp();
         $devices = Device::orderBy('id', 'DESC')->get();
         $address = AddressService::getAddress($devices[0]->latitude, $devices[0]->longitude);
 
